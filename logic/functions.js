@@ -79,27 +79,3 @@ function checkCpf(cpf, firstArray, secondArray) {
         }
 }
 // check cpf
-
-function checkCpf(cpfs, firstArray, secondArray) {
-    const cpfsToCheck = {
-       cpf: 12345678901,
-       cpf: 98765432109,
-       cpf: 11122233344,
-       cpf: 55566677788,
-       cpf: 99988877766,
-       cpf: 44433322211
-    }
-    const acc = firstArray.find(acc => acc.cpf === cpf);
-
-    if(!acc) return ` O cpf ${cpf} nao existe no nosso banco de dados`;
-    
-        const person = secondArray.find(per => per.cpf === cpf);
-
-        return {
-            account: acc.account,
-            clientType: acc.clientType,
-            cpf: acc.cpf,
-            name: person.name,
-            age: person.age
-        }
-}
