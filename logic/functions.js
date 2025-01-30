@@ -1,4 +1,4 @@
-// first
+// merging
 function mergeArrays(firstArray, secondArray) {
     const newArray = firstArray.map((acc) => {
         const person = personalInfos.find((per) => per.cpf === acc.cpf);
@@ -13,19 +13,18 @@ function mergeArrays(firstArray, secondArray) {
 
 return newArray;
 }
-export { mergeArrays };
-// first
+// merging
 
-// second
-// const newArray = mergeArrays(accountInfos, personalInfos);
 
-// newArray.sort(function(a, b) {
-// return a.name.localeCompare(b.name);
-// });
-// second
+// ordering
+personalInfos.sort(function(a, b) {
+    return a.name.localeCompare(b.name);
+    });
+// ordering
 
-// third
-function filterByAge(age, typeOfOperation, persons, accounts) {
+
+// filtering by age
+function filteringByAge(age, typeOfOperation, persons, accounts) {
     let filteredPersons = [];
     switch(typeOfOperation) {
         case 'equal':
@@ -45,9 +44,10 @@ function filterByAge(age, typeOfOperation, persons, accounts) {
     
     return filteredPersons;
     }    
-// third
+// filtering by age
 
-// fourth
+
+// type of account
 function countTypeOfAccounts(accounts) {
     let countOnAccountTypes = {}; 
 
@@ -59,4 +59,47 @@ function countTypeOfAccounts(accounts) {
     });
     return countOnAccountTypes;
 }
-// fourth
+// type of account
+
+
+// check cpf
+function checkCpf(cpf, firstArray, secondArray) {
+    const acc = firstArray.find(acc => acc.cpf === cpf);
+
+    if(!acc) return ` O cpf ${cpf} nao existe no nosso banco de dados`;
+    
+        const person = secondArray.find(per => per.cpf === cpf);
+
+        return {
+            account: acc.account,
+            clientType: acc.clientType,
+            cpf: acc.cpf,
+            name: person.name,
+            age: person.age
+        }
+}
+// check cpf
+
+function checkCpf(cpfs, firstArray, secondArray) {
+    const cpfsToCheck = {
+       cpf: 12345678901,
+       cpf: 98765432109,
+       cpf: 11122233344,
+       cpf: 55566677788,
+       cpf: 99988877766,
+       cpf: 44433322211
+    }
+    const acc = firstArray.find(acc => acc.cpf === cpf);
+
+    if(!acc) return ` O cpf ${cpf} nao existe no nosso banco de dados`;
+    
+        const person = secondArray.find(per => per.cpf === cpf);
+
+        return {
+            account: acc.account,
+            clientType: acc.clientType,
+            cpf: acc.cpf,
+            name: person.name,
+            age: person.age
+        }
+}
